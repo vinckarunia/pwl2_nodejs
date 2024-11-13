@@ -40,5 +40,5 @@ app.get('/users', async (req, res) => {
 });
 
 app.listen(PORT, () => {
-    console.log('Server running at http://127.0.0.1:${PORT}');
+    console.log(`Server running at http://127.0.0.1:${PORT}`);
 });
