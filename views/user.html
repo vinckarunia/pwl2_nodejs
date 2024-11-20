@@ -10,12 +10,14 @@
 <body>
     <div class="container">
         <h1 class="text-center mt-5">Daftar Pengguna</h1>
+        <a href="/users/create" class="btn btn-success mb-3">Tambah Pengguna</a>
         <table class="table table-striped mt-4">
             <thead>
                 <tr>
                     <th>ID</th>
                     <th>Nama</th>
                     <th>Email</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -24,6 +26,13 @@
                         <td><%= user.id %></td>
                         <td><%= user.name %></td>
                         <td><%= user.email %></td>
+                        <td>
+                            <a href="/users/<%= user.id %>" class="btn btn-info btn-sm">Detail</a>
+                            <a href="/users/<%= user.id %>/edit" class="btn btn-warning btn-sm">Edit</a>
+                            <form action="/users/<%= user.id %>?_method=DELETE" method="POST" style="display:inline;">
+                                <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
+                            </form>
+                        </td>
                     </tr>
                 <% }) %>
             </tbody>

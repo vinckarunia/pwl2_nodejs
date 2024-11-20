@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Pengguna</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center mt-5">Detail Pengguna</h1>
+        <div class="card mt-4">
+            <div class="card-body">
+                <h5 class="card-title">Nama: <%= user.name %></h5>
+                <p class="card-text">Email: <%= user.email %></p>
+                <a href="/users" class="btn btn-primary">Kembali ke Daftar Pengguna</a>
+                <a href="/users/<%= user.id %>/edit" class="btn btn-warning">Edit Pengguna</a>
+                <form action="/users/<%= user.id %>?_method=DELETE" method="POST" style="display:inline;">
+                    <button type="submit" class="btn btn-danger">Hapus Pengguna</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
